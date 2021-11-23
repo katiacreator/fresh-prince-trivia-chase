@@ -1,0 +1,22 @@
+body{
+  color:red
+}
+
+.game-board{ 
+  display: grid;
+  grid-template-columns: 120px 120px 120px 120px 120px;
+  grid-template-rows: 120px 120px 120px 120px 20px;
+  justify-content: center;
+}
+/* each box will have an id for the function to grab as the target in order to mark the specific square */
+.box {
+  padding: 50px;
+  background-color: #d9d9d9;
+  border: 2px solid black;
+}
+
+/* this is the 'center square' that will house the trivia question display */
+.ctr{
+  background-color: black;
+  color: black;
+}
