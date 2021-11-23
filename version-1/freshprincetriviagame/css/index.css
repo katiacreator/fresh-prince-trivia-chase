@@ -1,0 +1,89 @@
+:root {
+  --cotton-candy: rgb(255, 107, 201);
+  --black: #000000ff;
+  --white: #ffffffff;
+  --aqua: #04fafeff;
+  --bitter-lime: #c2f43dff;
+  --deep-purple: rgb(77, 4, 77);
+}
+
+body{
+  background-color: var(--bitter-lime);
+  color: var(--black);
+  font-size: 20px;
+  /* font-family: 'Rock Salt', cursive; */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#game-title{
+  font-size: 38px;
+  text-align: center;
+  color: black;
+  /* margin-top: 30px; */
+}
+
+.title{
+  font-family: 'Rock Salt', cursive;
+  font-weight: bold;
+  color: var(--bitter-lime);
+  font-size: 42px;
+  letter-spacing: 10px;
+  text-align: center;
+}
+
+.description{
+  width: 400px;
+  height: 50px;
+  font-size: 20px;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  /* margin: -15px 10px; */
+}
+
+.instructions{
+  width: 400px;
+  height: 20px;
+  font-size: 18px;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+}
+
+/* default styling */
+#content {
+  display: flex;  /* defaults to row layout */
+  justify-content: center;  /* centers items horizontally in row layout */
+  align-items: center;  /* centers vertically in row layout */
+  flex-direction: column; 
+  margin-top: 110px;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 200px;
+  width: 400px;
+  padding: 150px;
+  border: solid purple 15px;
+  border-radius: 25px;
+  background-color:var(--cotton-candy);
+}
+
+
+.btn {
+  background-color: var(--aqua);
+  color: black;
+  border: solid var(--aqua) 8px;
+  border-radius: 15px;
+  display: block;
+  padding: 10px 20px;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer; 
+} 
+
+
+
