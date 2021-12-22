@@ -1,22 +1,72 @@
-body{
-  color:red
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans&display=swap");
+
+body {
+  background: rgb(19, 19, 19);
+  color: #fff;
+  font-family: "Noto Sans", sans-serif;
 }
 
-.game-board{ 
+/* masonry grid for home page */
+/* ! DESKTOP/IPAD SIZING ONLY */
+.home-container {
   display: grid;
-  grid-template-columns: 120px 120px 120px 120px 120px;
-  grid-template-rows: 120px 120px 120px 120px 20px;
-  justify-content: center;
-}
-/* each box will have an id for the function to grab as the target in order to mark the specific square */
-.box {
-  padding: 50px;
-  background-color: #d9d9d9;
-  border: 2px solid black;
+  gap: 1rem;
+
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-auto-rows: 240px;
 }
 
-/* this is the 'center square' that will house the trivia question display */
-.ctr{
-  background-color: black;
-  color: black;
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #353535;
+  font-size: 1.3rem;
+  color: #fff;
+  box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem,
+    rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+  height: 100%;
+  width: 100%;
+  /* border: solid turquoise 1px; */
+  border-radius: 4px;
+  transition: all 500ms;
+  overflow: hidden;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.card > img {
+  height: 80%;
+  width: 80%;
+  /* border: solid red 2px; */
+}
+
+/* Title Card */
+.card:first-of-type{
+  background-color: #fff;
+  color: #000;
+}
+
+.card:nth-child(8){
+  background-color: magenta;
+}
+
+.card:nth-child(11){
+  background-color: cyan;
+}
+
+/* ! Enter button */
+button.btn{
+  background-color: purple;
+}
+
+.card-tall {
+  grid-row: span 2 / auto;
+}
+
+.card-wide {
+  grid-column: span 2 / auto;
 }

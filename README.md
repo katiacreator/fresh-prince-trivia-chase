@@ -10,6 +10,19 @@ This is a trivia game inspired by the popular game, 'Trivial Pursuit'. The trivi
   1b. home-container(mobile): solo centered grid layout of the game title card layered over the fresh prince will character image
     - 1 col, 2 rows, 2 layered centered divs and enter button on second row
   
+
+
+
+
+
+
+
+
+
+
+
+
+  
 ## INTRO CONTAINER
   2a. intro-container(lg screens): 3 columns/ 4 rows
     -title-div: 1 row 3 cols
