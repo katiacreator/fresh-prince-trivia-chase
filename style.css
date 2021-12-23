@@ -1,14 +1,14 @@
-/*TODO make sizing for desktop monitor that holds 7 columns  */
+/* TODO lower brightness/whiteness of images with opacity filter or color overlay? */
 /*TODO make sizing for laptop monitor and landscape table that holds 5 columns  */
 /*TODO make sizing for tablet portrait monitor that holds 3.5 columns  */
 /*TODO fix padding for home container  */
 /* TODO figure out how to do overlay for each card not whole display */
-@import url("https://fonts.googleapis.com/css?family=Noto+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Ubuntu&display=swap");
 
 body {
   background: #353535;
   color: black;
-  font-family: "Noto Sans", sans-serif;
+  font-family: Ubuntu;
   height: 100vh;
 }
 
@@ -16,13 +16,13 @@ body {
 /* ! DESKTOP SIZING ONLY */
 .home-container {
   display: grid;
-  gap: .8rem;
+  gap: 0.8rem;
 
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  /*! doesn't stretch at this height DONT CHANGE */
-  grid-auto-rows: 220px;
-  /* border: solid lime 4px;
-  margin: 0 auto; */
+  /*! doesn't stretch img at this height DONT CHANGE */
+  grid-auto-rows: 220px !important;
+  padding: 10px !important;
+  /* border: solid lime 4px;*/
 }
 
 .card {
@@ -30,101 +30,99 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* background: #353535; */
+  background: #353535;
   font-size: 1.3rem;
-  /* box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem,
-    rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem; */
+  box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem,
+    rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
   height: 100%;
   width: 100%;
-  border: solid red 2px;
   border-radius: 4px;
-  /* transition: all 500ms; */
+  transition: all 200ms;
   overflow: hidden;
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  
 }
 
+/* ! makes grid items move down 10px in a bouncing fashion */
+.card:hover {
+  box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em,
+    rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+  transform: translateY(10px) scale(1);
+  opacity: 1;
+}
+
+/* ! IMG ELEMENTS */
 .card > img {
-  height: 95%;
-  width: 95%;
+  height: 100%;
+  width: 100%;
   border-radius: 4px;
-  /* border: solid red 5px; */
+  /*TODO lower brightness of the white bg for now */
+  /* ! anything lower is too dull */
+  opacity: 0.92;
 }
 
-/* ! number label for divs for overlay */
-.label{
-  color:ghostwhite;
+/* ! number label for span elements for overlay */
+.label {
+  color: ghostwhite;
   font-size: 2rem;
+  text-align: center;
+  display: none;
+}
+
+/*! Title Card */
+#title {
+  font-size: 2.3rem;
   text-align: center;
 }
 
-/*! overlay number and color over images */
-/* #overlay {
-  position: fixed;
-  display: block;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(220, 49, 243, 0.5);
-  z-index: 2;
-  cursor: pointer;
-}
-
-#text{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  font-size: 50px;
-  color: white;
-  transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-} */
-
-/* !end overlay styling */
-/* Title Card */
-.card:first-of-type{
-  background-color: #fff;
-}
-
-.orange{
+/* ! COLOR BLOCKS */
+.orange {
   background-color: orange;
 }
 
-.lime{
+.lime {
   background-color: lime;
 }
-
-/* yellow */
-.yellow{
+.yellow {
   background-color: yellow;
+}
+
+.periwinkle {
+  background-color: rgb(113, 131, 236);
   color: #000;
 }
 
-.purple{
+.purple {
   background-color: purple;
 }
 
-.cyan{
+.cyan {
   background-color: cyan;
 }
 
-.hotpink{
+.hotpink {
   background-color: rgb(246, 18, 132);
 }
+/* ! END COLOR BLOCKS */
 
-.periwinkle{
-  background-color: rgb(113, 131, 236);
-}
-/* ! Enter button */
-.btn{
-  background-color: rgb(113, 131, 236);
+/* ! button link grid-item*/
+.btn {
+  background-color: yellow;
+  text-decoration: none;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: rgb(12, 7, 7);
+  letter-spacing: 2px;
 }
 
+.btn:hover {
+  background-color: red;
+  color: black;
+}
+
+/* ! END BUTTON STYLING */
+
+/* ! CLASSES FOR MASONRY STYLING */
 .card-tall {
   grid-row: span 2 / auto;
 }
@@ -132,3 +130,5 @@ body {
 .card-wide {
   grid-column: span 2 / auto;
 }
+
+/* ! END DESKTOP MONITOR SIZING */
