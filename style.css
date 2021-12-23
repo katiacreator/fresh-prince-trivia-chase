@@ -1,3 +1,8 @@
+/*TODO make sizing for desktop monitor that holds 7 columns  */
+/*TODO make sizing for laptop monitor and landscape table that holds 5 columns  */
+/*TODO make sizing for tablet portrait monitor that holds 3.5 columns  */
+/*TODO fix padding for home container  */
+/* TODO figure out how to do overlay for each card not whole display */
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans&display=swap");
 
 body {
@@ -103,9 +108,11 @@ body {
 
 .hotpink{
   background-color: rgb(246, 18, 132);
-
 }
 
+.periwinkle{
+  background-color: rgb(113, 131, 236);
+}
 /* ! Enter button */
 .btn{
   background-color: rgb(113, 131, 236);
