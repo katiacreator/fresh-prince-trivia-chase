@@ -10,6 +10,14 @@ This is a trivia game inspired by the popular game, 'Trivial Pursuit'. The trivi
   1b. home-container(mobile): solo centered grid layout of the game title card layered over the fresh prince will character image
     - 1 col, 2 rows, 2 layered centered divs and enter button on second row
   
+## INTRO CONTAINER
+  2a. intro-container(lg screens): 3 columns/ 4 rows
+    -title-div: 1 row 3 cols
+    -instructions-div: 1 row/ 3 cols
+    -category-grid-container: 2 rows/ 3 cols for 4-6 category cards
+    -start-btn
+  2b. intro-container(mobile): 1 col / 8 rows
+
 
 
 
@@ -23,14 +31,6 @@ This is a trivia game inspired by the popular game, 'Trivial Pursuit'. The trivi
 
 
   
-## INTRO CONTAINER
-  2a. intro-container(lg screens): 3 columns/ 4 rows
-    -title-div: 1 row 3 cols
-    -instructions-div: 1 row/ 3 cols
-    -category-grid-container: 2 rows/ 3 cols for 4-6 category cards
-    -start-btn
-  2b. intro-container(mobile): 1 col / 8 rows
-
 ## QUIZ CONTAINER
   3a. quiz-container(lg screens): board game grid layout on desktop, landscape tablet sizing only, mobile sizing on portrait tablet size
   <!-- ! TO BE FILLED IN LATER -->

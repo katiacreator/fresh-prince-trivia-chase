@@ -1,18 +1,6 @@
-/*TODO make sizing for laptop monitor and landscape tablet that holds 5 columns  */
-/*TODO make sizing for tablet portrait monitor that holds 3.5 columns  */
-/* TODO figure out how to do overlay for each card not whole display */
-/* TODO add root color variables to ensure consistency */
-/* TODO take off card hover property for all except button */
-@import url("https://fonts.googleapis.com/css?family=Ubuntu&display=swap");
-:root {
-  --cotton-candy: rgb(255, 107, 201);
-  --black: #000000ff;
-  --white: #ffffffff;
-  --aqua: #04fafeff;
-  --bitter-lime: #c2f43dff;
-  --deep-purple: rgb(77, 4, 77);
-}
-
+/* ! BEGIN DESKTOP MONITOR */
+/* TODO GRID 4 ROWS 6 COLUMNS */
+/* TODO GRID 3RD ROW 6 COLUMNS */
 body {
   background: #353535;
   color: black;
@@ -20,123 +8,117 @@ body {
   height: 100vh;
 }
 
-/* masonry grid for home page */
-/* ! DESKTOP SIZING ONLY */
-.home-container {
+/* ! GRID CONTAINER FOR INSTRUCTIONS PAGE */
+.intro-container {
+  height: 85vh;
+  /* margin-bottom: 200px; */
+
   display: grid;
-  gap: 0.8rem;
+  gap: 1rem;
 
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  /*! doesn't stretch img at this height DONT CHANGE */
-  grid-auto-rows: 220px !important;
-  padding: 10px !important;
-  /* border: solid lime 4px;*/
+  /* Explicit grid */
+  grid-template-areas:
+    "t  t  t  t"
+    "i  i  i  i"
+    "cg  cg  cg  cg"
+    "cg  cg  cg  cg";
+
+  grid-template-rows: repeat(4, 25%);
+  grid-template-columns: 240px auto auto 240px;
+  padding: 50px !important;
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: #353535;
-  font-size: 1.3rem;
-  box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem,
-    rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
-  height: 100%;
-  width: 100%;
-  border-radius: 4px;
-  transition: all 200ms;
-  overflow: hidden;
-  
+.block {
+  border: solid gray 2px;
+  padding: 20px;
 }
 
-/* ! makes grid items move down 10px in a bouncing fashion */
-.card:hover {
-  box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em,
-    rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
-  transform: translateY(10px) scale(1);
-  opacity: 1;
+.block:nth-child(odd) {
+  background-color: blue;
+  padding: 20px;
 }
 
-/* ! IMG ELEMENTS */
-.card > img {
-  height: 100%;
-  width: 100%;
-  border-radius: 4px;
-  /*TODO lower brightness of the white bg for now */
-  /* ! anything lower is too dull */
-  opacity: 0.92;
-}
-
-/* ! number label for span elements for overlay */
-.label {
-  color: ghostwhite;
-  font-size: 2rem;
-  text-align: center;
-  display: none;
-}
-
-/*! Title Card */
-#title {
-  font-size: 2.3rem;
-  text-align: center;
-}
-
-/* ! COLOR BLOCKS */
-.orange {
-  background-color: orange;
-}
-
-.lime {
-  background-color: lime;
-}
-.yellow {
-  background-color: yellow;
-}
-
-.periwinkle {
-  background-color: rgb(113, 131, 236);
-  color: #000;
-}
-
-.purple {
+.block:nth-child(even) {
   background-color: purple;
 }
 
-.cyan {
-  background-color: cyan;
+.block:nth-child(1) {
+  grid-area: t;
+  height: 30%;
 }
 
-.hotpink {
-  background-color: rgb(246, 18, 132);
+.block:nth-child(2) {
+  grid-area: i;
+  height: 50%;
+  margin-top: -100px;
 }
-/* ! END COLOR BLOCKS */
+/* !categories grid */
+.block:nth-child(3) {
+  grid-area: cg;
+  margin-top: -150px;
+}
 
-/* ! button link grid-item*/
-.btn {
-  background-color: yellow;
-  text-decoration: none;
+.block:nth-child(4) {
+  grid-area: n;
+}
+
+.categories-grid {
+  display: grid;
+  gap: 0.8rem;
+  height: 120% !important;
+  /* Explicit grid */
+  grid-template-areas:
+    "h h h h h h"
+    "a b c d e f"
+    "a b c d e f"
+    "n n n n n n";
+/* TODO fix auto sizing on rows and columns */
+grid-template-columns: 240px auto auto auto auto 240px;
+/* TODO fix auto sizing on rows and columns */
+grid-template-rows: repeat(4, 1fr);
+  padding: 10px;
+  border: solid lime 3px;
+
+}
+
+.cg-heading {
+  grid-area: h;
+  border: solid red 1px;
   text-align: center;
-  font-size: 2rem;
-  font-weight: bold;
-  color: rgb(12, 7, 7);
-  letter-spacing: 2px;
+  height: 30%;
 }
 
-.btn:hover {
-  background-color: red;
-  color: black;
+.card {
+  background-color: #fff;
+  border: solid red 1px;
+  /* height: 130%; */
+  margin-top: -50px;
 }
 
-/* ! END BUTTON STYLING */
-
-/* ! CLASSES FOR MASONRY STYLING */
-.card-tall {
-  grid-row: span 2 / auto;
+.card:nth-child(1) {
+  grid-area: a;
+}
+.card:nth-child(2) {
+  grid-area: b;
+}
+.card:nth-child(3) {
+  grid-area: c;
+}
+.card:nth-child(4) {
+  grid-area: d;
+}
+.card:nth-child(5) {
+  grid-area: e;
+}
+.card:nth-child(6) {
+  grid-area: f;
 }
 
-.card-wide {
-  grid-column: span 2 / auto;
+/* TODO fix btn centered sizing after fixing card sizing */
+.btn{
+  grid-area: n;
+  width: 20%;
 }
+
 
 /* ! END DESKTOP MONITOR SIZING */
